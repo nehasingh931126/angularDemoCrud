@@ -1,0 +1,29 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="page-wrap d-flex flex-row align-items-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <span class="display-1 d-block"></span>
+                <div>
+                    <form class="form-horizontal" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                            <app-check-form-validation (submit)=submitValue($event)></app-check-form-validation>
+                            </div>
+                        </div>
+                        <!-- <div class="form-group">
+                            <div class="col-sm-12">
+                            <label for="password" class="control-label">Password</label>
+                            <input type="password" id="password" class="form-control" formControlName="password">
+                            </div>
+                        </div> [disabled]="!form.valid" -->
+                        <button type="submit" class="btn btn-primary" >
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

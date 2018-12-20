@@ -1,0 +1,7 @@
+.help-block, .required{
+    color:red
+}
+
+thead>tr>th {
+    cursor: pointer;
+}

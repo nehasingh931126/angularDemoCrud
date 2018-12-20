@@ -1,0 +1,110 @@
+<div class="container">
+  <h2>Add Contact</h2>
+  <form [formGroup]="favForm" (ngSubmit)=onSubmit()>
+      <div class="row">
+        <div class="form-group col-xs-4" >
+          <label for="first_name">First name:</label><span class="required">*</span>
+          <input type="text" class="form-control" id="first_name" placeholder="Enter First Name" formControlName="first_name" capitalLetter="true">
+          <div class="help-block" *ngIf="!favForm.get('first_name').valid && favForm.get('first_name').touched">
+              *Please Enter a Valid First Name.
+           </div>
+        </div>
+        <div class="form-group col-xs-4">
+          <label for="middle_name">Middle Name:</label>
+          <input type="text" class="form-control" id="middle_name" placeholder="Enter Middle Name" formControlName="middle_name" appNamesDirective>
+          <div class="help-block" *ngIf="!favForm.get('middle_name').valid && favForm.get('middle_name').touched">
+              *Please Enter a Valid Middle Name.
+           </div>
+        </div>
+        <div class="form-group col-xs-4">
+            <label for="last_name">Last Name:</label><span class="required">*</span>
+            <input type="text" class="form-control" id="last_name" placeholder="Enter Last Name" formControlName="last_name" appNamesDirective>
+            <div class="help-block" *ngIf="!favForm.get('last_name').valid && favForm.get('last_name').touched">
+              *Please Enter a Valid Last Name.
+             </div>
+        </div>
+    </div>
+      <div class="row">
+    <div class="form-group col-xs-4">
+          <label for="email">Email</label><span class="required">*</span>
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" formControlName="email" required email>
+           <div class="help-block" *ngIf="!favForm.get('email').valid && favForm.get('email').touched">
+              *Please Enter a Valid Email.
+             </div>
+        </div>
+        <div class="form-group col-xs-4">
+          <label for="mobile_number">Mobile Number</label><span class="required">*</span>
+          <input type="text" class="form-control" id="mobile_number" placeholder="Enter Mobile Number" formControlName="mobile_number">
+           <div class="help-block" *ngIf="!favForm.get('mobile_number').valid && favForm.get('mobile_number').touched">
+              *Please Enter a Valid Mobile Number.
+             </div>
+        </div>
+        <div class="form-group col-xs-4">
+          <label for="contact_number">Contact Name:</label>
+          <input type="number" class="form-control" id="contact_number" placeholder="Enter Contact Number" formControlName="contact_number" maxlength="2">
+          <div class="help-block" *ngIf="!favForm.get('contact_number').valid && favForm.get('contact_number').touched">
+              *Please Enter a Valid Contact Number.
+             </div>
+        </div>
+        </div>
+        <div class="row">
+          <!-- <div class="form-group col-xs-4">
+              <label for="file">File Upload</label><span class="required">*</span>
+              <input type="file" class="form-control" id="doc" formControlName="doc" (change)="onFileChange($event)" />
+              <div class="help-block" *ngIf="!favForm.get('doc').valid && favForm.get('doc').touched">
+                *Please Enter a Valid Document.
+               </div>
+          </div> -->
+          <div class="form-group col-xs-4">
+            <label for="Notes">Notes</label><span class="required">*</span>
+            <textarea rows="1" class="form-control" id="notes" formControlName="notes"></textarea>
+            <div class="help-block" *ngIf="!favForm.get('notes').valid && favForm.get('notes').touched">
+                *Please Enter a Valid Notes.
+               </div>
+          </div>
+          <div class="form-group col-xs-4">
+            <label for="Calling Rate">Calling Rate</label><span class="required">*</span>
+            <select class="form-control" id="calling_rate" formControlName="calling_rate">
+                <option value="frequent">Frequent</option>
+                <option value="non_frequent">Non-Frequent</option>
+            </select>
+          </div>
+        </div>
+        <!-- <div class="row" formArrayName="hobbies">
+          <div class="form-group col-xs-2">
+              <button (click)="addHobbies()" type="button" class="btn btn-default">Add Hobbies</button>	
+          </div>
+          <div class="form-group col-xs-10">
+            <div *ngFor="let hobbyControl of favForm.get('hobbies').controls; let i= index">
+              <input type="text" class="form-control" id="hobbies" placeholder="Enter Hobbies" [formControlName]="i">
+              <span class="input-group-addon glyphicon glyphicon-trash" (click)="deleteHobby()"></span>
+            </div>  	
+          </div>
+          <div class="form-group col-xs-10" *ngIf="editFlag == true">
+            <div *ngFor="let hobby of onEditData.hobbies; let e= index">
+              <input type="text" class="form-control" id="hobbies" placeholder="Enter Hobbies" [formControlName]="e" [value]="hobby">
+            </div>  	
+          </div>
+        </div> -->
+      
+
+        <div class="radio">
+            <label><input type="radio" formControlName="optradio">Option 1</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" formControlName="optradio">Option 2</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" formControlName="optradio">Option 3</label>
+        </div>
+
+      <div class="row">
+        <div class="form-group col-xs-4">
+          <button type="submit" class="btn btn-default btn-lg" [disabled]="!favForm.valid">Submit</button>
+        </div>
+        <div class="form-group col-xs-4">
+          <a routerLink="/listing" class="btn btn-danger btn-lg">Cancel</a>
+        </div>
+      </div>
+  </form>
+</div>

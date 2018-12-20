@@ -1,0 +1,23 @@
+[
+    {
+      "first_name":"neha","middle_name":"singh","last_name":"sengar","email":"neha.singh931126@gmail.com","mobile_number":1234567897,"phone_number":8989898989,"notes":"Add to my faver","calling_rate":"frequent"
+    },
+    {
+      "first_name":"sonal","last_name":"trivedi","email":"sonal.trivedi@gmail.com","mobile_number":9092312345,"phone_number":8989898989,"notes":"Add to my onme","calling_rate":"frequent"
+    },
+    {
+      "first_name":"oshin","last_name":"sharma","email":"oshin.sharma@gmail.com","mobile_number":9522335434,"phone_number":8989898989,"notes":"Add to my tow","calling_rate":"frequent"
+    },
+    {
+      "first_name":"karan","last_name":"veer","email":"karan.veer@gmail.com","mobile_number":6767676767,"phone_number":8989898989,"notes":"Add to my three","calling_rate":"non_frequent"
+    },
+    {
+      "first_name":"sumit","last_name":"sharma","email":"sumit.sharma@gmail.com","mobile_number":9097854322,"phone_number":8989898989,"notes":"Add to my four","calling_rate":"frequent"
+    },
+    {
+      "first_name":"paras","last_name":"jain","email":"paras.jain@gmail.com","mobile_number":4545454545,"phone_number":8989898989,"notes":"Add to my five","calling_rate":"frequent"
+    },
+    {
+      "first_name":"rajan","last_name":"sharma","email":"rajan.sharma@gmail.com","mobile_number":9867676767,"phone_number":8989898989,"notes":"Add to my six","calling_rate":"non_frequent"
+    }
+  ]

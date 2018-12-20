@@ -1,0 +1,21 @@
+<!--This is your master form-->
+<form [formGroup]="teamForm">
+    <!--Use formArray to create multiple, smaller forms'-->
+    <div formArrayName="memberDetails">
+      <div *ngFor="let single of allTeamDetails; let $index=index">
+        <div [formGroupName]="$index">
+            <div>
+                    <!--your field properties of every repeated items-->
+                <div>
+                    <input placeholder="First Name" type="text" formControlName="firstName"/>
+                </div>
+                <!-- <div *ngIf="!teamForm.get('firstName').valid && teamForm.get('firstName').touched">* Please provide the valid data</div> -->
+                <div>
+                    <input placeholder="Last Name" type="text" formControlName="lastName" />
+                </div>
+                <!-- <div *ngIf="!teamForm.get('lastName').valid && teamForm.get('lastName').touched">* Please rovide the valid data</div> -->
+            </div>
+      </div>
+    </div>
+    </div>
+</form>

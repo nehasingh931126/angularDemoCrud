@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2>Fav Contacts</h2>
+  <nav class="navbar">
+      <input type="text" class="form-control" placeholder="Search" [(ngModel)]="query" id="listSearch">
+      <!-- <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="Search here">       -->
+  </nav>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th (click)="sort('first_name')">Name
+            <span class="glyphicon sort-icon" *ngIf="key =='name'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+        </th>
+        <th (click)="sort('email')">Email</th>
+        <th (click)="sort('calling_rate')">Calling Rate</th>
+        <th (click)="sort('mobile_number')">Mobile Number</th>
+        <th>Actions</th> 
+       </tr>
+    </thead>
+    <tbody *ngIf="favContactLists?.length > 0; else no_record">
+      <tr *ngFor="let contact of favContactLists| myFilter: query | orderBy: key : reverse| paginate: { itemsPerPage: 5, currentPage: p };let i=index">
+        <td>{{ i+1 }}</td>
+        <td>{{ contact.first_name }}</td>
+        <td>{{ contact.email }}</td>
+        <td *ngIf="contact.calling_rate == 'frequent'; else non_frequent" >{{ "Frequent" }}</td>
+        <ng-template #non_frequent><td>{{ "Non Frequent" }}</td></ng-template>
+        <td >{{ contact.mobile_number }}</td>
+        <td><a [routerLink]="['/edit', i+1]">
+                <span class="glyphicon glyphicon-pencil"></span>
+            </a>
+            <a (click) = "deleteContact(i)">
+                <span class="glyphicon glyphicon-trash"></span>
+            </a>
+        </td>
+       </tr>
+      
+    </tbody>
+    <ng-template #no_record>
+      <tbody>
+        <td colspan="5" class="active cen" align="center">No Record Found</td>
+      </tbody>
+    </ng-template>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </table>
+</div>
+
+</body>
+</html>
