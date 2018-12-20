@@ -30,8 +30,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Features Used
 
 It is the basic project with some Angular concepts like 
-Custom Directives
-Reactive forms
-Basic Validations
-Routing
+Custom Directives,
+Reactive forms,
+Basic Validations,
+Routing,
 CRUD operation
